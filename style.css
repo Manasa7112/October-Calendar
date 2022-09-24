@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-family: "Quicksand";
+}
+
+.calender{
+   padding: 20px;
+   box-shadow: 0 0 12px #cccc; 
+   
+}
+
+.month-week{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 30px;
+}
+
+.month-week span{
+    font-size: 13px;
+    margin-left: 5px;
+    background-color: #872607;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.month-week span:last-child{
+    background-color: transparent;
+    color: #872607;
+    border: 1px solid #872607;
+}
+
+.weeks{
+    margin-bottom: 20px;
+}
+.weeks span{
+    padding: 20px;
+    color: #872607;
+}
+
+.days{
+    display: flex;
+}
+
+.days span{
+    width: 14.30%;
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 1;
+    transition: .5s;
+}
+
+.days span:not(.next-month)::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background-color: #872607;
+    border-radius: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: .5s;
+}
+
+.days span:not(.next-month):hover{
+    color: #fff;
+}
+
+.days span:not(.next-month):hover::before{
+    opacity: 1;
+}
+.next-month{
+    color: #cccc !important;
+}
